@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Enquiry Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: #263b91;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+        }
+
+        /* Form */
+        .form-container {
+            padding: 30px;
+        }
+
+        .section-title {
+            background: #3978d8;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .field {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 7px;
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #3978d8;
+            box-shadow: 0 0 4px rgba(57,120,216,0.3);
+        }
+
+        .gender {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .gender label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .gender input {
+            width: auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #263b91;
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #1d2e73;
+        }
+
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>ABES Engineering College, Ghaziabad</h1>
+        <p>Student Admission Enquiry Form (2026-27)</p>
+    </div>
+
+    <!-- Student Information -->
+    <div class="form-container">
+
+        <div class="section-title">
+            Student Information
+        </div>
+
+        <form>
+
+            
+            <div class="row">
+                <div class="field">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Enter First Name">
+                </div>
+
+                <div class="field">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Enter Last Name">
+                </div>
+            </div>
+
+            
+            <div class="row">
+
+                <div class="field">
+                    <label>Date of Birth</label>
+                    <input type="date">
+                </div>
+
+                <div class="field">
+                    <label>Gender</label>
+
+                    <div class="gender">
+
+                        <label>
+                            <input type="radio" name="gender" value="male">
+                            Male
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="other">
+                            Other
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div class="row">
+
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter Email">
+                </div>
+
+                <div class="field">
+                    <label>Mobile Number</label>
+                    <input type="tel"
+                           placeholder="Enter Mobile Number"
+                           maxlength="10">
+                </div>
+
+            </div>
+
+            
+            <div class="row">
+
+                <div class="field">
+                    <label>Course Interested In</label>
+
+                    <select>
+                        <option value="">Select Course</option>
+                        <option>B.Tech CSE</option>
+                        <option>B.Tech IT</option>
+                        <option>B.Tech ECE</option>
+                        <option>B.Tech Mechanical</option>
+                        <option>MBA</option>
+                        <option>MCA</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>City</label>
+                    <input type="text" placeholder="Enter City">
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+
+    <!-- Parent Information -->
+    <div class="form-container">
+
+        <div class="section-title">
+            Parent Information
+        </div>
+
+        <form>
+
+            
+            <div class="row">
+
+                <div class="field">
+                    <label>Father's Name</label>
+                    <input type="text" placeholder="Enter Father's Name">
+                </div>
+
+                <div class="field">
+                    <label>Mother's Name</label>
+                    <input type="text" placeholder="Enter Mother's Name">
+                </div>
+
+            </div>
+
+            
+            <div class="row">
+
+                <div class="field">
+                    <label>Father's Mobile Number</label>
+                    <input type="tel"
+                           placeholder="Enter Father's Mobile Number"
+                           maxlength="10">
+                </div>
+
+                <div class="field">
+                    <label>Mother's Mobile Number</label>
+                    <input type="tel"
+                           placeholder="Enter Mother's Mobile Number"
+                           maxlength="10">
+                </div>
+
+            </div>
+
+            
+            <div class="row">
+
+                <div class="field">
+                    <label>Father's Email</label>
+                    <input type="email"
+                           placeholder="Enter Father's Email">
+                </div>
+
+                <div class="field">
+                    <label>Mother's Email</label>
+                    <input type="email"
+                           placeholder="Enter Mother's Email">
+                </div>
+
+            </div>
+        </form> 
+
+        <div class="Form-Container">
+            <div class="section-title">
+                Academics Details
+            </div>
+
+            <label>10th Percentage</label>
+            <input type="text" >
+        </div>
+
+
+            <div class="Form-Container">
+                <div class="section-title">
+                    Address
+                </div>
+
+                <form>
+
+                    <label for="address">Full Address</label>
+                    <textarea id="address" rows="4" cols="50"></textarea>
+                </form>
+
+            </div>
+
+            
+            <button type="submit" class="submit-btn">
+                Submit Enquiry
+            </button>
+
+        
+
+    </div>
+
+</div>
+
+</body>
+</html>

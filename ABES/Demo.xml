@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="college.xsl"?>
+
+<college>
+    <header>Hello Everyone! Welcome to ABES Engineering College</header>
+
+    <section>
+        <title>AISE</title>
+        <item>Artificial Intelligence</item>
+        <item>Machine Learning</item>
+        <item>Deep Learning</item>
+    </section>
+
+    <section>
+        <title>Data Structures</title>
+        <item>Array</item>
+        <item>Stack</item>
+        <item>Queue</item>
+    </section>
+
+    <section>
+        <title>Web Technology</title>
+        <item>HTML</item>
+        <item>CSS</item>
+        <item>JavaScript</item>
+    </section>
+
+    <section>
+        <title>Languages</title>
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+    </section>
+</college>

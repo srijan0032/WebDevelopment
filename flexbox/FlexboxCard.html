@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .card-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 100px;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .card-box{
+            width: 450px;
+            height: auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 2px 3px;
+            overflow: hidden;
+            
+        }
+        .card-container img{
+            width: 100%;
+            height: 70%;
+        }
+        .card-container .btn{
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 16px;
+            color: rgb(217, 215, 218);
+            
+        }
+        h3{
+            color: rgb(130, 9, 244);
+        }
+        @media (min-width:500px)
+        {
+            body{
+                background-color: rgb(164, 119, 141);
+            }
+        }
+        @media (max-width:1000px)
+        {
+            .card-container{
+                flex-direction: column;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card-box">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.599x4qG7UkOp9doezAklRgHaEK?pid=Api&P=0&h=180">
+            <h3>Card 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, officia.</p>
+            <a href="" class="btn">read more</a>
+        </div>
+        <div class="card-box">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.fmejP53Yf1Swmqnygj-ThgHaFS?pid=Api&P=0&h=180">
+            <h3>Card 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eligendi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, voluptatum.</p>
+            <a href="" class="btn">read more</a>
+        </div>
+
+        <div class="card-box">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.F-E9HAheJ9ztGgZc5vW_1QHaEo?pid=Api&P=0&h=180">
+            <h3>Card 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eligendi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, alias?</p>
+            <a href="" class="btn">read more</a>
+        </div>
+    </div>
+</body>
+</html>

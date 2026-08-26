@@ -1,0 +1,18 @@
+h1{
+    color:gray;
+    border:30px;
+    margin:100px;
+    padding:50px;
+    font-size:25px;
+    text-align:center;
+}
+
+p{
+    background-color: pink;
+}
+
+img{
+    height:200px;
+    width:200px;
+    border:10px dotted beige;
+}

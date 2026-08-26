@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Calendar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80")
+          no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        margin-top: 20px;
+        color: rgb(170, 245, 245); /* light pink-lavender color for heading */
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        font-size: 2.5rem;
+      }
+      .controls {
+        margin: 20px;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      input,
+      button {
+        padding: 8px;
+        font-size: 16px;
+      }
+      .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        width: 90%;
+        max-width: 600px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .day {
+        background: rgb(232, 229, 229);
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        min-height: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #5480f1; /* light lavender color */
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .day.has-event {
+        background: #d0bc86;
+        border: 1px solid #fce7aa;
+      }
+      #details {
+        margin-top: 20px;
+        padding: 15px;
+        background: rgba(138, 179, 225, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interactive Calendar</h1>
+
+    <div class="controls">
+      <input type="number" id="dayInput" placeholder="Day (1-31)" />
+      <input type="number" id="monthInput" placeholder="Month (1-12)" />
+      <button onclick="showDayDetails()">Get Day Details</button>
+    </div>
+
+    <div class="calendar" id="calendar"></div>
+
+    <div id="details">Select a date to see details</div>
+
+    <script>
+      const calendar = document.getElementById("calendar");
+      const details = document.getElementById("details");
+      const events = JSON.parse(localStorage.getItem("events") || "{}");
+
+      function renderCalendar(
+        month = new Date().getMonth(),
+        year = new Date().getFullYear()
+      ) {
+        calendar.innerHTML = "";
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+
+        for (let i = 0; i < firstDay.getDay(); i++) {
+          const empty = document.createElement("div");
+          calendar.appendChild(empty);
+        }
+
+        for (let day = 1; day <= lastDay.getDate(); day++) {
+          const div = document.createElement("div");
+          div.className = "day";
+          div.textContent = day;
+
+          const key = `${year}-${month + 1}-${day}`;
+          if (events[key]) div.classList.add("has-event");
+
+          div.addEventListener("click", () =>
+            showDateDetails(day, month, year)
+          );
+          calendar.appendChild(div);
+        }
+      }
+
+      function showDateDetails(day, month, year) {
+        const date = new Date(year, month, day);
+        const key = `${year}-${month + 1}-${day}`;
+        let message = `<strong>${date.toDateString()}</strong>`;
+
+        if (events[key]) {
+          message += `<p>Event: ${events[key]}</p>`;
+        } else {
+          message += `<p>No event for this day.</p>`;
+        }
+
+        message += `<button onclick="addEvent('${key}')">Add/Edit Event</button>`;
+        details.innerHTML = message;
+      }
+
+      function addEvent(key) {
+        const eventText = prompt(
+          "Enter event for this day:",
+          events[key] || ""
+        );
+        if (eventText !== null) {
+          events[key] = eventText;
+          localStorage.setItem("events", JSON.stringify(events));
+          renderCalendar();
+          details.innerHTML = `<p>Event saved: ${eventText}</p>`;
+        }
+      }
+
+      function showDayDetails() {
+        const day = parseInt(document.getElementById("dayInput").value);
+        const month = parseInt(document.getElementById("monthInput").value) - 1;
+        if (!day || month < 0 || month > 11) {
+          alert("Enter a valid day and month");
+          return;
+        }
+        showDateDetails(day, month, new Date().getFullYear());
+      }
+
+      renderCalendar();
+    </script>
+  </body>
+</html>
