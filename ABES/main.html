@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, sans-serif;
+        }
+        .navbar{
+            height: 180px;
+            background-color: aqua;
+            display: flex;
+            align-items: flex-start;
+            padding-top: 60px;
+            padding-left: 30px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+        .navbar ul li {
+            position: relative;
+            color: white;
+            font-size: 38px;
+            padding: 10px 55px;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 370px;
+            background-color: #18c3a8;
+        }
+        .dropdown li {
+            display: block;
+            font-size: 30px !important;
+            padding: 25px 55px !important;
+            width: 100%;
+        }
+        .navbar li:hover .dropdown {
+            display: block;
+        }
+        .sub-dropdown {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 370px;
+            background-color: #18c3a8;
+        }
+        .dropdown li:hover .sub-dropdown {
+            display: block;
+        }
+        .css-box {
+            background-color: #26394d;
+        }
+        .content {
+            padding: 80px 35px;
+        }
+
+        .content h1 {
+            font-size: 70px;
+        }
+        .right-heading {
+            position: absolute;
+            top: 300px;
+            left: 700px;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li>Home</li>
+            <li>Front End Design
+                <ul class="dropdown">
+                    <li>HTML</li>
+                    <li>CSS
+                        <ul class="dropdown">
+                            <li>Reset</li>
+                            <li>Grids</li>
+                            <li>Frameworks</li>
+                        </ul>
+                    </li>
+                    <li>Javascript</li>
+                </ul>
+            </li>
+            <li>WordPress Development</li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>MultiLevel Dropdown Menu</h1>
+    </div>
+</body>
+</html>
