@@ -1,353 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Admission Enquiry Form</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            overflow: hidden;
-        }
-
-        /* Header */
-        .header {
-            background: #263b91;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        .header h1 {
-            font-size: 26px;
-            margin-bottom: 8px;
-        }
-
-        .header p {
-            font-size: 14px;
-        }
-
-        /* Form */
-        .form-container {
-            padding: 30px;
-        }
-
-        .section-title {
-            background: #3978d8;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-
-        .row {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
-
-        .field {
-            flex: 1;
-        }
-
-        label {
-            display: block;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 7px;
-            font-weight: 500;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 11px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        input:focus,
-        select:focus {
-            border-color: #3978d8;
-            box-shadow: 0 0 4px rgba(57,120,216,0.3);
-        }
-
-        .gender {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-top: 10px;
-        }
-
-        .gender label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin: 0;
-            font-weight: normal;
-        }
-
-        .gender input {
-            width: auto;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: #263b91;
-            color: white;
-            border: none;
-            padding: 13px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background: #1d2e73;
-        }
-
-        @media (max-width: 600px) {
-            .row {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .form-container {
-                padding: 20px;
-            }
-
-            .header h1 {
-                font-size: 21px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABES Engineering College</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:8px;font-family:Arial,sans-serif;background:#fff}
+.container{width:100%;max-width:1000px;margin:auto;background:#fff;border:1px solid #dcdcdc;border-radius:8px;box-shadow:0 10px 25px rgba(0,0,0,.1),0 4px 10px
+rgba(0,0,0,.05);overflow:hidden}
+.header{width:100%;text-align:center;padding:12px 20px;background:#063b6d;color:#fff}
+.icon{font-size:42px;margin-bottom:2px}
+.header h2{margin:2px 0;font-size:25px}
+.header h3{margin:2px 0;font-size:13px;font-weight:normal}
+form{width:100%}
+table{width:100%;border-spacing:0;padding:12px 22px} td{padding:3px 8px;font-size:13px;vertical-align:middle}
+.section-heading td{padding:7px 10px;background:#0861b5;color:#fff;border-radius:2px}
+.section-heading h3{margin:0;font-size:15px} label{font-weight:600;margin-right:4px}
+input[type="text"],input[type="email"],input[type="date"],input[type="tel"],input[type="numbe r"],select,textarea{width:100%;padding:7px;font-size:13px;border:1px solid #c9c9c9;border-radius:3px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#0861b5} textarea{height:65px;resize:vertical}
+input[type="radio"]{margin-left:8px;margin-right:3px}
+.radio-group{white-space:nowrap}
+.button-row{text-align:center;padding:8px 0 15px}
+.submit-btn,.reset-btn{border:0;color:#fff;padding:9px 35px;border-radius:3px;font-size:13px;cursor:pointer;margin:0 6px}
+.submit-btn{background:#0861b5}.reset-btn{background:#e53935}
+.submit-btn:hover{background:#064c91}.reset-btn:hover{background:#c62828}
+.footer{background:#063b6d;color:#fff;text-align:center;padding:7px;font-size:11px} @media(max-width:700px){body{padding:3px}table{padding:8px}.header h2{font-
+size:20px}.header h3{font-size:11px}td{padding:3px}input[type="radio"]{margin-left:3px}}
+</style>
 </head>
 
+
 <body>
-
 <div class="container">
-
-    <!-- Header -->
-    <div class="header">
-        <h1>ABES Engineering College, Ghaziabad</h1>
-        <p>Student Admission Enquiry Form (2026-27)</p>
-    </div>
-
-    <!-- Student Information -->
-    <div class="form-container">
-
-        <div class="section-title">
-            Student Information
-        </div>
-
-        <form>
-
-            
-            <div class="row">
-                <div class="field">
-                    <label>First Name</label>
-                    <input type="text" placeholder="Enter First Name">
-                </div>
-
-                <div class="field">
-                    <label>Last Name</label>
-                    <input type="text" placeholder="Enter Last Name">
-                </div>
-            </div>
-
-            
-            <div class="row">
-
-                <div class="field">
-                    <label>Date of Birth</label>
-                    <input type="date">
-                </div>
-
-                <div class="field">
-                    <label>Gender</label>
-
-                    <div class="gender">
-
-                        <label>
-                            <input type="radio" name="gender" value="male">
-                            Male
-                        </label>
-
-                        <label>
-                            <input type="radio" name="gender" value="female">
-                            Female
-                        </label>
-
-                        <label>
-                            <input type="radio" name="gender" value="other">
-                            Other
-                        </label>
-
-                    </div>
-                </div>
-
-            </div>
-
-            
-            <div class="row">
-
-                <div class="field">
-                    <label>Email</label>
-                    <input type="email" placeholder="Enter Email">
-                </div>
-
-                <div class="field">
-                    <label>Mobile Number</label>
-                    <input type="tel"
-                           placeholder="Enter Mobile Number"
-                           maxlength="10">
-                </div>
-
-            </div>
-
-            
-            <div class="row">
-
-                <div class="field">
-                    <label>Course Interested In</label>
-
-                    <select>
-                        <option value="">Select Course</option>
-                        <option>B.Tech CSE</option>
-                        <option>B.Tech IT</option>
-                        <option>B.Tech ECE</option>
-                        <option>B.Tech Mechanical</option>
-                        <option>MBA</option>
-                        <option>MCA</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label>City</label>
-                    <input type="text" placeholder="Enter City">
-                </div>
-
-            </div>
-
-        </form>
-    </div>
-
-
-    <!-- Parent Information -->
-    <div class="form-container">
-
-        <div class="section-title">
-            Parent Information
-        </div>
-
-        <form>
-
-            
-            <div class="row">
-
-                <div class="field">
-                    <label>Father's Name</label>
-                    <input type="text" placeholder="Enter Father's Name">
-                </div>
-
-                <div class="field">
-                    <label>Mother's Name</label>
-                    <input type="text" placeholder="Enter Mother's Name">
-                </div>
-
-            </div>
-
-            
-            <div class="row">
-
-                <div class="field">
-                    <label>Father's Mobile Number</label>
-                    <input type="tel"
-                           placeholder="Enter Father's Mobile Number"
-                           maxlength="10">
-                </div>
-
-                <div class="field">
-                    <label>Mother's Mobile Number</label>
-                    <input type="tel"
-                           placeholder="Enter Mother's Mobile Number"
-                           maxlength="10">
-                </div>
-
-            </div>
-
-            
-            <div class="row">
-
-                <div class="field">
-                    <label>Father's Email</label>
-                    <input type="email"
-                           placeholder="Enter Father's Email">
-                </div>
-
-                <div class="field">
-                    <label>Mother's Email</label>
-                    <input type="email"
-                           placeholder="Enter Mother's Email">
-                </div>
-
-            </div>
-        </form> 
-
-        <div class="Form-Container">
-            <div class="section-title">
-                Academics Details
-            </div>
-
-            <label>10th Percentage</label>
-            <input type="text" >
-        </div>
-
-
-            <div class="Form-Container">
-                <div class="section-title">
-                    Address
-                </div>
-
-                <form>
-
-                    <label for="address">Full Address</label>
-                    <textarea id="address" rows="4" cols="50"></textarea>
-                </form>
-
-            </div>
-
-            
-            <button type="submit" class="submit-btn">
-                Submit Enquiry
-            </button>
-
-        
-
-    </div>
-
+<form action="">
+<div class="header">
+<div class="icon">🎓</div>
+<h2>ABES Engineering College, Ghaziabad</h2>
+<h3>Student Admission Enquiry Form (2026-27)</h3>
 </div>
+<table>
+<tr class="section-heading"><td colspan="2"><h3>Student Information</h3></td></tr>
+<tr><td><label for="firstName">First Name</label></td><td><label for="lastName">Last Name</label></td></tr>
+<tr><td><input type="text" id="firstName" name="firstName" placeholder="Enter first
+name"></td><td><input type="text" id="lastName" name="lastName" placeholder="Enter last name"></td></tr>
+<tr><td><label for="dob">Date of Birth</label></td><td><label>Gender</label></td></tr>
+<tr><td><input type="date" id="dob" name="dob"></td><td class="radio-group"><input
+type="radio" id="male" name="gender" value="Male"><label for="male">Male</label><input type="radio" id="female" name="gender" value="Female"><label
+for="female">Female</label><input type="radio" id="other" name="gender" value="Other"><label for="other">Other</label></td></tr>
+<tr><td><label for="email">Email</label></td><td><label for="mobile">Mobile No.</label></td></tr>
+<tr><td><input type="email" id="email" name="email" placeholder="Enter
+email"></td><td><input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number"></td></tr>
 
+
+<tr class="section-heading"><td colspan="2"><h3>Parent Information</h3></td></tr>
+<tr><td><label for="fatherName">Father Name</label></td><td><label for="motherName">Mother Name</label></td></tr>
+<tr><td><input type="text" id="fatherName" name="fatherName" placeholder="Father name"></td><td><input type="text" id="motherName" name="motherName"
+placeholder="Mother name"></td></tr>
+<tr><td><label for="parentMobile">Parent Mobile Number</label></td><td><label for="occupation">Occupation</label></td></tr>
+<tr><td><input type="tel" id="parentMobile" name="parentMobile" placeholder="Parent mobile number"></td><td><input type="text" id="occupation" name="occupation"
+placeholder="Occupation"></td></tr>
+
+
+<tr class="section-heading"><td colspan="2"><h3>Academic Details</h3></td></tr>
+<tr><td><label for="percentage10">10th Percentage</label></td><td><label for="percentage12">12th Percentage</label></td></tr>
+<tr><td><input type="number" id="percentage10" name="percentage10" placeholder="10th percentage"></td><td><input type="number" id="percentage12" name="percentage12"
+placeholder="12th percentage"></td></tr>
+<tr><td><label for="board">Board</label></td><td><label for="passingYear">Year of Passing</label></td></tr>
+<tr>
+<td><select id="board" name="board">
+<option value="">-- Select Board --</option><option value="CBSE">CBSE</option><option value="CISCE">CISCE (ICSE/ISC)</option><option value="NIOS">NIOS</option><option value="UPMSP">UP Board (UPMSP)</option><option value="BSEB">Bihar Board (BSEB)</option><option value="RBSE">Rajasthan Board (RBSE)</option><option
+value="MPBSE">Madhya Pradesh Board (MPBSE)</option><option value="BSE Odisha">Odisha Board</option><option value="WBBSE">West Bengal Board</option><option
+value="MSBSHSE">Maharashtra Board</option><option value="KSEAB">Karnataka Board</option><option value="TN Board">Tamil Nadu Board</option><option value="CGBSE">Chhattisgarh Board</option><option value="PSEB">Punjab
+Board</option><option value="HBSE">Haryana Board</option><option value="JKBOSE">Jammu & Kashmir Board</option><option value="HPBOSE">Himachal Pradesh Board</option><option value="UBSE">Uttarakhand Board</option><option value="GSEB">Gujarat
+Board</option><option value="BSEAP">Andhra Pradesh Board</option><option value="BSE Telangana">Telangana Board</option><option value="Kerala Board">Kerala
+Board</option><option value="Other">Other</option>
+</select></td>
+<td><select id="passingYear" name="passingYear"><option value="">-- Select Year --
+</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option
+value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select></td>
+</tr>
+
+
+<tr class="section-heading"><td colspan="2"><h3>Course Preference</h3></td></tr>
+<tr><td><label for="branch">Engineering Branch</label></td><td><label for="admissionMode">Mode of Admission</label></td></tr>
+<tr>
+<td><select id="branch" name="branch"><option value="">-- Select Branch --</option><option value="CSE">Computer Science Engineering</option><option value="CSE-AIML">CSE - Artificial Intelligence & Machine Learning</option><option value="CSE-DS">CSE - Data
+Science</option><option value="IT">Information Technology</option><option value="ECE">Electronics & Communication Engineering</option><option value="ME">Mechanical Engineering</option><option value="CE">Civil
+Engineering</option></select></td>
+<td><select id="admissionMode" name="admissionMode"><option value="">-- Select Mode --
+</option><option value="JEE Main">JEE Main</option><option value="Direct">Direct Admission</option><option value="Counselling">Counselling</option><option value="Other">Other</option></select></td>
+</tr>
+
+
+<tr class="section-heading"><td colspan="2"><h3>Address</h3></td></tr>
+<tr><td colspan="2"><label for="address">Full Address</label></td></tr>
+<tr><td colspan="2"><textarea id="address" name="address" placeholder="Enter full address"></textarea></td></tr>
+<tr><td><label for="city">City</label></td><td><label for="state">State</label></td></tr>
+<tr><td><input type="text" id="city" name="city" placeholder="City"></td><td><input type="text" id="state" name="state" placeholder="State"></td></tr>
+<tr><td><label for="pincode">Pincode</label></td><td><label for="country">Country</label></td></tr>
+<tr><td><input type="text" id="pincode" name="pincode"
+placeholder="Pincode"></td><td><input type="text" id="country" name="country" value="India"></td></tr>
+<tr><td colspan="2" class="button-row"><button type="submit" class="submit-btn">Submit Enquiry</button><button type="reset" class="reset-btn">Reset Form</button></td></tr>
+</table>
+</form>
+<div class="footer">© 2026 ABES Engineering College, Ghaziabad | Admission Cell</div>
+</div>
 </body>
 </html>
+
