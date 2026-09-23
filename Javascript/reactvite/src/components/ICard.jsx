@@ -3,7 +3,7 @@ import React from 'react'
 
 function ICard(props) {
   return (
-    <div>
+    <div style={{border:'2px solid red', height:'300px', width:'300px'}} >
       {/* <img
         src={props.image}
         alt={props.name}

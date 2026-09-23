@@ -5,8 +5,12 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import ICard from './components/ICard'
 import ICardGallery from './components/ICardGallery'
+import StateHandling from './components/StateHandling'
+import Bgcolor from './components/Bgcolor'
+
 
 function App() {
+  const[count,setCount] = useState(20);
   return (
     // <div style={{border:'2px solid red', height:'300px', width:'300px'}}>
     //   {/* <h1>ABES</h1>
@@ -20,8 +24,11 @@ function App() {
       
 
     // </div>
-    <div style={{border:'2px solid red', height:'300px', width:'300px'}}>
-      <ICardGallery/>
+    <div >
+      {/* <ICardGallery/> */}
+
+      {/* <StateHandling/> */}
+      <Bgcolor/>
     </div>
   )
 }
